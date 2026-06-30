@@ -163,7 +163,7 @@ menu = st.sidebar.radio(
 st.divider()
 
 # ---------- 1. Tambah Halte ----------
-if menu.startswith("1"):
+if menu.startswith("Tambah halte"):
     st.subheader("➕ Tambah Halte")
     with st.form("form_tambah_halte", clear_on_submit=True):
         nama = st.text_input("Nama halte baru")
