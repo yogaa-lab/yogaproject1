@@ -1,2 +1,0 @@
-# yogaproject1
-ngodinglah
