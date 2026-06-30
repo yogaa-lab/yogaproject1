@@ -149,14 +149,14 @@ st.caption("Implementasi struktur data **deque** untuk operasi `enqueue` (append
 menu = st.sidebar.radio(
     "Pilih Menu",
     [
-        "1. Tambah Halte",
-        "2. Tampilkan Daftar Halte",
-        "3. Tambah Penumpang ke Halte",
-        "4. Bus Datang (naikkan penumpang)",
-        "5. Tampilkan Antrian di Halte",
-        "6. Tambah Rute + Jadwal",
-        "7. Tampilkan Satu Rute",
-        "8. Tampilkan Semua Rute",
+        " Tambah Halte",
+        " Tampilkan Daftar Halte",
+        " Tambah Penumpang ke Halte",
+        " Bus Datang (naikkan penumpang)",
+        " Tampilkan Antrian di Halte",
+        " Tambah Rute + Jadwal",
+        " Tampilkan Satu Rute",
+        " Tampilkan Semua Rute",
     ]
 )
 
