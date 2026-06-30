@@ -182,7 +182,6 @@ elif menu.startswith("2"):
             st.write(f"- **{nama_halte}** — {len(antrian)} penumpang mengantri")
 
 # ---------- 3. Tambah Penumpang ke Halte ----------
-elif menu.startswith("3"):
     st.subheader("🧍 Tambah Penumpang ke Halte")
     if not antrian_halte:
         st.warning("Belum ada halte. Tambahkan halte dulu.")
