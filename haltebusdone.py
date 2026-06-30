@@ -116,6 +116,10 @@ def tambah_rute(nama_rute, daftar_halte, daftar_jadwal):
         log(f"Rute '{nama_rute}' sudah ada.", "warning")
         return
 
+    if not daftar_halte:
+        log("Urutan halte tidak boleh kosong.", "warning")
+        return
+
     for h in daftar_halte:
         if h not in antrian_halte:
             log(f"Halte '{h}' belum terdaftar. Tambahkan halte itu dulu.", "error")
@@ -145,21 +149,21 @@ st.caption("Implementasi struktur data **deque** untuk operasi `enqueue` (append
 menu = st.sidebar.radio(
     "Pilih Menu",
     [
-        " Tambah Halte",
-        " Tampilkan Daftar Halte",
-        " Tambah Penumpang ke Halte",
-        " Bus Datang (naikkan penumpang)",
-        " Tampilkan Antrian di Halte",
-        " Tambah Rute + Jadwal",
-        " Tampilkan Satu Rute",
-        " Tampilkan Semua Rute",
+        "1. Tambah Halte",
+        "2. Tampilkan Daftar Halte",
+        "3. Tambah Penumpang ke Halte",
+        "4. Bus Datang (naikkan penumpang)",
+        "5. Tampilkan Antrian di Halte",
+        "6. Tambah Rute + Jadwal",
+        "7. Tampilkan Satu Rute",
+        "8. Tampilkan Semua Rute",
     ]
 )
 
 st.divider()
 
 # ---------- 1. Tambah Halte ----------
-if menu.startswith("Tambah halte"):
+if menu.startswith("1"):
     st.subheader("➕ Tambah Halte")
     with st.form("form_tambah_halte", clear_on_submit=True):
         nama = st.text_input("Nama halte baru")
@@ -178,6 +182,7 @@ elif menu.startswith("2"):
             st.write(f"- **{nama_halte}** — {len(antrian)} penumpang mengantri")
 
 # ---------- 3. Tambah Penumpang ke Halte ----------
+elif menu.startswith("3"):
     st.subheader("🧍 Tambah Penumpang ke Halte")
     if not antrian_halte:
         st.warning("Belum ada halte. Tambahkan halte dulu.")
