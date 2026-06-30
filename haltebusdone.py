@@ -116,10 +116,6 @@ def tambah_rute(nama_rute, daftar_halte, daftar_jadwal):
         log(f"Rute '{nama_rute}' sudah ada.", "warning")
         return
 
-    if not daftar_halte:
-        log("Urutan halte tidak boleh kosong.", "warning")
-        return
-
     for h in daftar_halte:
         if h not in antrian_halte:
             log(f"Halte '{h}' belum terdaftar. Tambahkan halte itu dulu.", "error")
