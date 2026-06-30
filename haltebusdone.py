@@ -157,7 +157,6 @@ menu = st.sidebar.radio(
         "6. Tambah Rute + Jadwal",
         "7. Tampilkan Satu Rute",
         "8. Tampilkan Semua Rute",
-        "9. Tampilkan Jadwal Rute",
     ]
 )
 
@@ -261,22 +260,6 @@ elif menu.startswith("8"):
     else:
         for nama_rute, daftar_halte in rute_bus.items():
             st.write(f"**{nama_rute}**: {' ➝ '.join(daftar_halte)}")
-
-# ---------- 9. Tampilkan Jadwal Rute ----------
-elif menu.startswith("9"):
-    st.subheader("🕒 Jadwal Rute")
-    if not jadwal_rute:
-        st.info("Belum ada rute.")
-    else:
-        nama_rute = st.selectbox("Nama rute", list(jadwal_rute.keys()))
-        jadwal = jadwal_rute[nama_rute]
-        if jadwal:
-            st.write(f"Jadwal **{nama_rute}** (urut keberangkatan selanjutnya):")
-            for i, jam in enumerate(jadwal, start=1):
-                tanda = " ⬅️ berikutnya" if i == 1 else ""
-                st.write(f"{i}. {jam}{tanda}")
-        else:
-            st.info(f"Jadwal {nama_rute}: tidak ada lagi")
 
 # ===== LOG / OUTPUT (pengganti print di CLI) =====
 st.subheader("📝 Riwayat Pesan")
